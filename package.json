@@ -13,6 +13,11 @@
     "type": "git",
     "url": "git+https://github.com/thoso/styleg.git"
   },
+  "keywords": [
+    "styleguide",
+    "generator",
+    "cli"
+  ],
   "author": {
     "name": "Athos Palmer",
     "email": "contato@athospalmer.com.br"
