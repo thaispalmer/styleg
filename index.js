@@ -101,7 +101,9 @@ program
   .arguments('[file]')
   .description(`Shows style guide in browser for a given file (defaults to ${styleGuideFile})`)
   .action((file) => {
-    styleGuideFile = file;
+    if (file) {
+      styleGuideFile = file;
+    }
   });
 
 program.parse(process.argv);
@@ -110,7 +112,7 @@ program.parse(process.argv);
 
 if (cmd === null) {
   if (!fs.existsSync(styleGuideFile)) {
-    console.error(`${colors.red('Error:')} File ${styleGuideFile} doesn't exist.`);
+    console.error(`${colors.red('Error:')} File ${styleGuideFile} doesn't exist. If you want to create a new style guide file, please run ${colors.green(`${program._name} create`)}`);
     process.exit(1);
   }
 
