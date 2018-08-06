@@ -1,6 +1,6 @@
 {
   "name": "styleg",
-  "version": "0.0.2",
+  "version": "0.0.3",
   "description": "Simple style guide generator and visualizer",
   "main": "index.js",
   "bin": {
