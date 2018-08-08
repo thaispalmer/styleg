@@ -95,5 +95,16 @@
 
     </div>
 
+    {{#liveReloadPort}}
+    <!-- Live Reload Server -->
+    <script>
+      var ws = new WebSocket("ws://localhost:{{liveReloadPort}}");
+      ws.onmessage = function (e) {
+        if (e.data === 'update') {
+          window.location.reload();
+        }
+      }
+    </script>
+    {{/liveReloadPort}}
   </body>
 </html>

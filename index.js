@@ -10,6 +10,7 @@ const prompt = require('prompt');
 const path = require('path');
 const opn = require('opn');
 const fs = require('fs');
+const ws = require('ws');
 
 // --- Default values
 
@@ -59,7 +60,8 @@ let cmd = null;
 
 program
   .version(package.version)
-  .option('-p, --port <port>', 'Change default listen port', 9800)
+  .option('-p, --port <port>', 'Change server listen port', 9800)
+  .option('--live-reload <port>', 'Change live reload port', 9801)
   .option('-b, --build <file>', 'Build style guide into a HTML file');
 
 program
@@ -116,9 +118,12 @@ if (cmd === null) {
     process.exit(1);
   }
 
-  const buildHtml = () => {
+  const buildHtml = (liveReload) => {
     const template = fs.readFileSync(path.resolve(__dirname, './template.html'), 'utf8');
     const obj = jsonfile.readFileSync(styleGuideFile);
+    if (liveReload) {
+      obj.liveReloadPort = program.liveReload;
+    }
     return mustache.render(template, obj);
   }
 
@@ -136,9 +141,24 @@ if (cmd === null) {
     process.exit(0);
   }
 
+  const wss = new ws.Server({
+    port: program.liveReload
+  });
+  fs.watch(styleGuideFile, (eventType) => {
+    if (eventType === 'change') {
+      console.log(colors.gray(`${styleGuideFile} has been updated, reloading...`))
+      wss.clients.forEach((client) => {
+        if (client.readyState === ws.OPEN) {
+          client.send('update');
+        }
+      })
+    }
+  });
+  console.log(colors.green('\nLive-reload server listening on port ') + colors.yellow(program.liveReload));
+
   let app = express();
   app.get('/', (req, res) => {
-    const htmlContent = buildHtml();
+    const htmlContent = buildHtml(true);
     res.send(htmlContent);
   });
 

@@ -26,7 +26,11 @@ Output the version number
 
 #### `-p, --port <port>`
 
-Change default listen port (default: 9800)
+Change listen port (default: 9800)
+
+#### `--live-reload <port>`
+
+Change live reload port (default: 9801)
 
 #### `-b, --build <file>`
 
