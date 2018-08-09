@@ -15,32 +15,7 @@ const ws = require('ws');
 // --- Default values
 
 let styleGuideFile = 'styleg.json';
-const defaultValues = {
-  _styleg: '1',
-  version: '1.0.0',
-  project: 'Project Name',
-  author: 'Author',
-  colors: [
-    {
-      name: 'Black',
-      color: '#000000'
-    },
-    {
-      name: 'Gray',
-      color: '#CCCCCC'
-    },
-    {
-      name: 'White',
-      color: '#FFFFFF'
-    }
-  ],
-  fonts: [
-    {
-      family: 'Lato',
-      stylesheet: 'https://fonts.googleapis.com/css?family=Lato:300,400,700'
-    }
-  ],
-};
+const defaultValues = require('./defaults.json');
 
 // --- Prompt configuration
 

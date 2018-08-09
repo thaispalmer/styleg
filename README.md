@@ -6,7 +6,7 @@
 
 Useful for artists and developers who wants to create guides for consistent visual implementations, this tool generates a `.json` file that has all the parameters needed. And optionally it can build this data visually into a HTML file.
 
-Currently, it has support for color palettes and font families. View [example folder](https://github.com/thoso/styleg/tree/master/examples) for more information.
+Currently, it has support for color palettes, font families and font icons. View [example folder](https://github.com/thoso/styleg/tree/master/examples) for more information.
 
 ## Installation
 

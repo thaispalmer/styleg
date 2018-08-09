@@ -13,6 +13,11 @@
     <link rel="stylesheet" href="{{stylesheet}}">
     {{/fonts}}
 
+    <!-- Font Icons -->
+    {{#fontIcons}}
+    {{{import}}}
+    {{/fontIcons}}
+
     <title>{{project}} Style Guide - {{version}}</title>
   </head>
   <body class="bg-light">
@@ -88,6 +93,40 @@
         <em class="text-muted pl-3">No fonts defined.</em>
         {{/fonts}}
       </div>
+
+      <hr class="my-4">
+
+      <!-- Font Icons -->
+      <h4 class="font-weight-bold text-uppercase text-muted">Font Icons</h4>
+      {{#fontIcons}}
+      <div class="card mb-3">
+        <div class="card-header p-2 font-weight-bold">
+          {{name}}
+        </div>
+        <div class="card-body">
+          <div class="row px-2">
+            {{#icons}}
+            <div class="col-6 col-sm-4 col-md-3 col-lg-2 my-2">
+              <div class="card">
+                <div class="card-body text-center">
+                  <h1><i class="{{.}}"></i></h6>
+                  <span class="small text-monospace text-muted">{{.}}</span>
+                </div>
+              </div>
+            </div>
+            {{/icons}}
+          </div>
+        </div>
+        <div class="card-footer">
+          <code>
+            {{import}}
+          </code>
+        </div>
+      </div>
+      {{/fontIcons}}
+      {{^fontIcons}}
+      <em class="text-muted pl-2">No icons defined.</em>
+      {{/fontIcons}}
 
       <footer class="border-top mt-5 pt-2 text-right">
         <small>Generated with <a href="https://github.com/thoso/styleg" target="_blank">styleG</a></small>

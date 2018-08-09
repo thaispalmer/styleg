@@ -1,0 +1,50 @@
+{
+  "_styleg": "1",
+  "version": "1.0.0",
+  "project": "Icon Example",
+  "author": "StyleG",
+  "fontIcons": [
+    {
+      "name": "Font Awesome (CSS)",
+      "import": "<link rel=\"stylesheet\" href=\"https://use.fontawesome.com/releases/v5.2.0/css/all.css\" integrity=\"sha384-hWVjflwFxL6sNzntih27bfxkr27PmbbK/iSvJ+a4+0owXq79v+lsFkW54bOGbiDQ\" crossorigin=\"anonymous\">",
+      "icons": [
+        "fas fa-code",
+        "far fa-file-code",
+        "fas fa-desktop",
+        "far fa-address-book",
+        "fas fa-address-card ",
+        "fas fa-anchor",
+        "fas fa-angle-left",
+        "fas fa-angle-right",
+        "far fa-arrow-alt-circle-left",
+        "far fa-arrow-alt-circle-right",
+        "fas fa-share-square",
+        "fas fa-share-alt"
+      ]
+    },
+    {
+      "name": "Font Awesome (SVG)",
+      "import": "<script defer src=\"https://use.fontawesome.com/releases/v5.2.0/js/all.js\" integrity=\"sha384-4oV5EgaV02iISL2ban6c/RmotsABqE4yZxZLcYMAdG7FAPsyHYAPpywE9PJo+Khy\" crossorigin=\"anonymous\"></script>",
+      "icons": [
+        "fas fa-users",
+        "fas fa-sign-out-alt",
+        "far fa-check-circle",
+        "far fa-eye",
+        "fas fa-chart-line",
+        "fas fa-cubes"
+      ]
+    },
+    {
+      "name": "Ionicons",
+      "import": "<link href=\"https://unpkg.com/ionicons@4.3.0/dist/css/ionicons.min.css\" rel=\"stylesheet\">",
+      "icons": [
+        "icon ion-md-heart",
+        "icon ion-md-calculator",
+        "icon ion-md-send",
+        "icon ion-ios-aperture",
+        "icon ion-ios-contact",
+        "icon ion-ios-musical-notes"
+      ]
+    }
+  ]
+}
