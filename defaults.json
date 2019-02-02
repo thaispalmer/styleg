@@ -17,6 +17,35 @@
       "color": "#FFFFFF"
     }
   ],
+  "headings": {
+    "default": {
+      "family": "Lato",
+      "color": "#000000",
+      "weight": "900",
+      "css": ""
+    },
+    "h1": {
+      "family": "Lato",
+      "size": "",
+      "color": "",
+      "weight": "900",
+      "css": ""
+    },
+    "h2": {
+      "family": "Lato",
+      "size": "",
+      "color": "red",
+      "weight": "900",
+      "css": ""
+    },
+    "h3": {
+      "family": "Lato",
+      "size": "",
+      "color": "blue",
+      "weight": "300",
+      "css": ""
+    }
+  },
   "fonts": [
     {
       "family": "Lato",

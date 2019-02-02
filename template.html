@@ -19,6 +19,131 @@
     {{/fontIcons}}
 
     <title>{{project}} Style Guide - {{version}}</title>
+
+    <style>
+      {{#headings.default}}
+      .headings-defaults {
+        {{#family}}
+        font-family: {{family}};
+        {{/family}}
+        {{#color}}
+        color: {{color}};
+        {{/color}}
+        {{#weight}}
+        font-weight: {{weight}};
+        {{/weight}}
+        {{css}}
+      }
+      {{/headings.default}}
+
+      {{#headings.h1}}
+      .headings-h1 {
+        {{#family}}
+        font-family: {{family}};
+        {{/family}}
+        {{#size}}
+        font-size: {{size}};
+        {{/size}}
+        {{#color}}
+        color: {{color}};
+        {{/color}}
+        {{#weight}}
+        font-weight: {{weight}};
+        {{/weight}}
+        {{css}}
+      }
+      {{/headings.h1}}
+
+      {{#headings.h2}}
+      .headings-h2 {
+        {{#family}}
+        font-family: {{family}};
+        {{/family}}
+        {{#size}}
+        font-size: {{size}};
+        {{/size}}
+        {{#color}}
+        color: {{color}};
+        {{/color}}
+        {{#weight}}
+        font-weight: {{weight}};
+        {{/weight}}
+        {{css}}
+      }
+      {{/headings.h2}}
+
+      {{#headings.h3}}
+      .headings-h3 {
+        {{#family}}
+        font-family: {{family}};
+        {{/family}}
+        {{#size}}
+        font-size: {{size}};
+        {{/size}}
+        {{#color}}
+        color: {{color}};
+        {{/color}}
+        {{#weight}}
+        font-weight: {{weight}};
+        {{/weight}}
+        {{css}}
+      }
+      {{/headings.h3}}
+
+      {{#headings.h4}}
+      .headings-h4 {
+        {{#family}}
+        font-family: {{family}};
+        {{/family}}
+        {{#size}}
+        font-size: {{size}};
+        {{/size}}
+        {{#color}}
+        color: {{color}};
+        {{/color}}
+        {{#weight}}
+        font-weight: {{weight}};
+        {{/weight}}
+        {{css}}
+      }
+      {{/headings.h4}}
+
+      {{#headings.h5}}
+      .headings-h5 {
+        {{#family}}
+        font-family: {{family}};
+        {{/family}}
+        {{#size}}
+        font-size: {{size}};
+        {{/size}}
+        {{#color}}
+        color: {{color}};
+        {{/color}}
+        {{#weight}}
+        font-weight: {{weight}};
+        {{/weight}}
+        {{css}}
+      }
+      {{/headings.h5}}
+
+      {{#headings.h6}}
+      .headings-h6 {
+        {{#family}}
+        font-family: {{family}};
+        {{/family}}
+        {{#size}}
+        font-size: {{size}};
+        {{/size}}
+        {{#color}}
+        color: {{color}};
+        {{/color}}
+        {{#weight}}
+        font-weight: {{weight}};
+        {{/weight}}
+        {{css}}
+      }
+      {{/headings.h6}}
+    </style>
   </head>
   <body class="bg-light">
 
@@ -30,6 +155,9 @@
         <small>- {{author}}</small>
         {{/author}}
       </h5>
+      {{#description}}
+      <p>{{.}}</p>
+      {{/description}}
 
       <hr class="mb-4">
 
@@ -52,6 +180,18 @@
         <em class="text-muted pl-2">No colors defined.</em>
         {{/colors}}
       </div>
+
+      <hr class="my-4">
+
+      <!-- Headings -->
+      <h4 class="font-weight-bold text-uppercase text-muted">Headings</h4>
+
+      <h1 class="headings-defaults headings-h1">h1. Lorem ipsum dolor sit amet</h1>
+      <h2 class="headings-defaults headings-h2">h2. Lorem ipsum dolor sit amet</h2>
+      <h3 class="headings-defaults headings-h3">h3. Lorem ipsum dolor sit amet</h3>
+      <h4 class="headings-defaults headings-h4">h4. Lorem ipsum dolor sit amet</h4>
+      <h5 class="headings-defaults headings-h5">h5. Lorem ipsum dolor sit amet</h5>
+      <h6 class="headings-defaults headings-h6">h6. Lorem ipsum dolor sit amet</h6>
 
       <hr class="my-4">
 
