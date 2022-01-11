@@ -8,7 +8,7 @@ const mustache = require('mustache');
 const express = require('express');
 const prompt = require('prompt');
 const path = require('path');
-const opn = require('opn');
+const open = require('open');
 const fs = require('fs');
 const ws = require('ws');
 
@@ -144,5 +144,5 @@ if (cmd === null) {
   console.log("\n" + colors.green('Listening on port ') + colors.yellow(options.port));
   console.log(colors.green('Open on your browser at ') + colors.white(url) + "\n");
 
-  opn(url);
+  open(url);
 }
