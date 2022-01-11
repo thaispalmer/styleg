@@ -11,7 +11,7 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/thoso/styleg.git"
+    "url": "git+https://github.com/thaispalmer/styleg.git"
   },
   "keywords": [
     "styleguide",
@@ -19,14 +19,14 @@
     "cli"
   ],
   "author": {
-    "name": "Athos Palmer",
-    "email": "contato@athospalmer.com.br"
+    "name": "Thais Palmer",
+    "email": "thais@safik.com.br"
   },
   "license": "MIT",
   "bugs": {
-    "url": "https://github.com/thoso/styleg/issues"
+    "url": "https://github.com/thaispalmer/styleg/issues"
   },
-  "homepage": "https://github.com/thoso/styleg#readme",
+  "homepage": "https://github.com/thaispalmer/styleg#readme",
   "dependencies": {
     "colors": "^1.3.1",
     "commander": "^8.3.0",
