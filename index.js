@@ -84,6 +84,7 @@ program
   });
 
 program.parse(process.argv);
+const options = program.opts();
 
 // ---
 
@@ -97,27 +98,27 @@ if (cmd === null) {
     const template = fs.readFileSync(path.resolve(__dirname, './template.html'), 'utf8');
     const obj = jsonfile.readFileSync(styleGuideFile);
     if (liveReload) {
-      obj.liveReloadPort = program.liveReload;
+      obj.liveReloadPort = options.liveReload;
     }
     return mustache.render(template, obj);
   }
 
-  if (program.build) {
+  if (options.build) {
     const htmlContent = buildHtml();
-    fs.writeFileSync(program.build, htmlContent);
+    fs.writeFileSync(options.build, htmlContent);
     console.log(
       "\n" +
       colors.green('Style guide ') +
       colors.white(styleGuideFile) +
       colors.green(' has been built successfully into ') +
-      colors.white(program.build) +
+      colors.white(options.build) +
       "\n"
     );
     process.exit(0);
   }
 
   const wss = new ws.Server({
-    port: program.liveReload
+    port: options.liveReload
   });
   fs.watch(styleGuideFile, (eventType) => {
     if (eventType === 'change') {
@@ -129,7 +130,7 @@ if (cmd === null) {
       })
     }
   });
-  console.log(colors.green('\nLive-reload server listening on port ') + colors.yellow(program.liveReload));
+  console.log(colors.green('\nLive-reload server listening on port ') + colors.yellow(options.liveReload));
 
   let app = express();
   app.get('/', (req, res) => {
@@ -137,10 +138,10 @@ if (cmd === null) {
     res.send(htmlContent);
   });
 
-  app.listen(program.port);
+  app.listen(options.port);
 
-  const url = `http://localhost:${program.port}/`;
-  console.log("\n" + colors.green('Listening on port ') + colors.yellow(program.port));
+  const url = `http://localhost:${options.port}/`;
+  console.log("\n" + colors.green('Listening on port ') + colors.yellow(options.port));
   console.log(colors.green('Open on your browser at ') + colors.white(url) + "\n");
 
   opn(url);
